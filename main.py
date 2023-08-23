@@ -3,7 +3,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import time
 
-
 chrome_driver_path = r"Users\jojo\OneDrive\Documents\Coding\chromedriver_win32\chromedriver.exe"
 service = Service(executable_path=chrome_driver_path)
 driver = webdriver.Chrome(service=service)
@@ -11,12 +10,10 @@ driver = webdriver.Chrome(service=service)
 URL = "http://orteil.dashnet.org/experiments/cookie/"
 driver.get(url=URL)
 
-
 #gets cookie and clicks on it to click
 def click_cookie():
     cookie = driver.find_element(By.ID,"cookie")
     cookie.click()
-
 
 #checks the number of cookies available, returns integer of number of cookies available
 def get_cookie_count():
@@ -24,7 +21,6 @@ def get_cookie_count():
     if "," in cookie_counter:
         cookie_counter = cookie_counter.replace(",", "")
     return int(cookie_counter)
-
 
 #buy the most expensive upgrade available, takes cookie count as input
 def buy_upgrade(cookie_count):
