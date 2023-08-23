@@ -32,14 +32,12 @@ def buy_upgrade(cookie_count):
         if upgrade != "":
             upgrades_list.append(upgrade)
 
-
     list_upgrade_prices = []
     for upgrade_price in upgrades_list:
         upgrade_price = upgrade_price.split('-')[1].strip()
         if "," in upgrade_price:
             upgrade_price = upgrade_price.replace(",","")
         list_upgrade_prices.append(int(upgrade_price))
-
 
     affordable_items=[]
     for item in list_upgrade_prices:
@@ -52,13 +50,11 @@ def buy_upgrade(cookie_count):
         item_to_buy = upgrades_list[index_item_to_buy]
         item_to_buy = str(item_to_buy.split("-")[0].strip())
 
-
         buy_item = driver.find_element(By.ID, f"buy{item_to_buy}")
         buy_item.click()
 
     else:
         pass
-
 
 t_end = time.time() + 20
 
