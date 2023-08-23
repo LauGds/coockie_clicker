@@ -1,22 +1,4 @@
-# from selenium import webdriver
-# from selenium.webdriver.chrome.service import Service
-# from selenium.webdriver.common.by import By
-# import time
-#
-# service = Service(r"D:\Documents\Laura\100_days_coding\chromedriver_win32\chromedriver.exe")
-# driver = webdriver.Chrome(service=service)
-#
-# driver.get("https://orteil.dashnet.org/cookieclicker/")
-#
-#
-# language = driver.find_element(by=By.ID, value="#promptContentChangeLanguage div")
-# print(language.text)
-# # language.send_keys(Keys.ENTER)
-#
-# # click = driver.find_element(by=By.ID, value="bigCookie")
-# # click.send_keys(Keys.ENTER)
-#
-# time.sleep(60)
+
 
 
 from selenium import webdriver
