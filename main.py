@@ -10,21 +10,21 @@ driver = webdriver.Chrome(service=service)
 URL = "http://orteil.dashnet.org/experiments/cookie/"
 driver.get(url=URL)
 
-#gets cookie and clicks on it to click
+
 def click_cookie():
     cookie = driver.find_element(By.ID,"cookie")
     cookie.click()
 
-#checks the number of cookies available, returns integer of number of cookies available
+
 def get_cookie_count():
     cookie_counter = driver.find_element(By.ID, "money").text
     if "," in cookie_counter:
         cookie_counter = cookie_counter.replace(",", "")
     return int(cookie_counter)
 
-#buy the most expensive upgrade available, takes cookie count as input
+
 def buy_upgrade(cookie_count):
-    #get the current list of all upgrades
+
     upgrades = driver.find_elements(By.CSS_SELECTOR, "#store b")
     upgrades_list = []
     for _ in range (len(upgrades)):
@@ -32,7 +32,7 @@ def buy_upgrade(cookie_count):
         if upgrade != "":
             upgrades_list.append(upgrade)
 
-    #get the integer prices for all upgrades
+
     list_upgrade_prices = []
     for upgrade_price in upgrades_list:
         upgrade_price = upgrade_price.split('-')[1].strip()
@@ -40,7 +40,7 @@ def buy_upgrade(cookie_count):
             upgrade_price = upgrade_price.replace(",","")
         list_upgrade_prices.append(int(upgrade_price))
 
-    #Determine the most expensive affordable upgrade based on cookie count passed into function
+
     affordable_items=[]
     for item in list_upgrade_prices:
         if item < cookie_count:
@@ -52,7 +52,7 @@ def buy_upgrade(cookie_count):
         item_to_buy = upgrades_list[index_item_to_buy]
         item_to_buy = str(item_to_buy.split("-")[0].strip())
 
-        #Click to buy the most expensive affordable upgrade
+
         buy_item = driver.find_element(By.ID, f"buy{item_to_buy}")
         buy_item.click()
 
