@@ -62,7 +62,6 @@ def buy_upgrade(cookie_count):
 
 t_end = time.time() + 20
 
-
 game_end = time.time() + (60*5)
 game_on = True
 
