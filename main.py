@@ -60,10 +60,9 @@ def buy_upgrade(cookie_count):
         pass
 
 
-# Checks for available upgrades every 20 secs
 t_end = time.time() + 20
 
-# game ends after 5 mins
+
 game_end = time.time() + (60*5)
 game_on = True
 
