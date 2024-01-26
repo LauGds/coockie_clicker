@@ -72,3 +72,4 @@ while game_on:
         game_on = False
         cookies_per_second = driver.find_element(By.ID,"cps").text
         print(f"Time Up!!, your {cookies_per_second}. Congratulations")
+        
